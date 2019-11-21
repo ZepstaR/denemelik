@@ -1,7 +1,27 @@
-# Global Starboard ⭐
-Global Starboard is a bot developed for Discord Hack Week [Discord Hack Week](https://discord.gg/hackweek "https://discord.gg/hackweek") that is designed to bring communities together. The funniest, most meme-worthiest posts that get a number of star reactions in any server that has the Global Starboard bot will be automatically sent to the global starboard channel!
+Welcome to Glitch
+=================
 
-The Global Starboard server can be found [here](https://discord.gg/nMjHtqX).
-You can invite the Global Starboard bot [here](https://discordapp.com/oauth2/authorize?client_id=592714451225149460&scope=bot&permissions=388161).
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
 
-![Global Starboard Logo](https://repository-images.githubusercontent.com/193497460/16dbaa80-997c-11e9-9c7f-ae680e9048ce)
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+
+Find out more [about Glitch](https://glitch.com/about).
+
+
+Your Project
+------------
+
+On the front-end,
+- edit `public/client.js`, `public/style.css` and `views/index.html`
+- drag in `assets`, like images or music, to add them to your project
+
+On the back-end,
+- your app starts at `server.js`
+- add frameworks and packages in `package.json`
+- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+
+
+Made by [Glitch](https://glitch.com/)
+-------------------
+
+\ ゜o゜)ノ

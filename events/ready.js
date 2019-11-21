@@ -1,33 +1,21 @@
-var core = require('../coreFunctions.js');
-var configuration = require('../config.json');
+const chalk = require('chalk');
+const moment = require('moment');
 const Discord = require('discord.js');
-module.exports = (client, Discord) => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setStatus('online');
+const ayarlar = require('../ayarlar.json');
 
-  if (!client.messages) {
-    core.initEnmap("messages", client)
-  }
+var prefix = ayarlar.prefix;
 
-  //Fetch messages
-  var messages = client.messages.map(x => x.messageid);
-  messages.forEach(msg => {
-    if (!client.channels.get(client.messages.get(msg, "channelid"))) {
-      if (client.messages.get(msg, "globalBoard")) { //Remove from global starboard if on global starboard
-        client.channels.get(configuration.config.channels.global_starboard).fetchMessage(client.messages.get(msg, "globalBoardMessage")).then(fetched => fetched.delete())
-      }
-      client.messages.delete(msg) //Remove from database
-      return;
-    }
-    client.channels.get(client.messages.get(msg, "channelid")).fetchMessage(client.messages.get(msg, "messageid")).then(f => console.log("Fetched " + f.id)).catch(e => {
-      //IF MESSAGE HAS BEEN DELETED
 
-      if (client.messages.get(msg, "globalBoard")) { //Remove from global starboard if on global starboard
-        client.channels.get(configuration.config.channels.global_starboard).fetchMessage(client.messages.get(msg, "globalBoardMessage")).then(fetched => fetched.delete())
-      }
-      client.messages.delete(msg) //Remove from database
-    })
-  })
-
-  core.botLog("`[LOGIN]` Bot is online");
+module.exports = client => {
+  console.log(`${client.user.username} ismi ile giriş yapıldı!`);
+  client.user.setStatus("idle");
+  //idle = boşta
+  //dnd = rahatsız etmeyin
+  //online = çevrimiçi
+  console.log(`                                                                                                                                                                     `)
+  client.user.setActivity(`Kartalya Starboard | ${client.guilds.size} sunucu | ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcıyı hizmet veriyor.`, { type: "WATCHING"});
+  //LISTENING = DİNLİYOR
+  //WATCHING = İZLİYOR
+  //PLAYING = OYNUYOR 
+  console.log(`${client.user.username}: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 };

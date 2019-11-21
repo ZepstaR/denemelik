@@ -1,19 +1,17 @@
 {
-  "name": "global-starboard",
-  "description": "A bot that brings together all of the amazing star-worthy posts from around Discord",
-  "author": "Brightness™#2238",
-  "main": "node bot.js",
+  "name": "discord-simple-starboard",
+  "version": "1.1.0",
+  "description": "discord bot for creating a starboard in a server with predefined channel/guild IDs",
+  "main": "star.js",
   "scripts": {
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "10.16.0"
-  },
+  "author": "The-Jame",
+  "license": "ISC",
   "dependencies": {
-    "discord.js": "11.5.1",
-    "enmap": "^5.0.0",
-    "ms": "2.1.2",
-    "request": "^2.88.0",
-    "better-sqlite3": "^5.4.0"
+    "discord.js": "^11.5.1",
+    "node-fetch": "^2.6.0",
+    "set-immediate": "^0.1.1",
+    "setimmediate": "^1.0.5"
   }
 }
